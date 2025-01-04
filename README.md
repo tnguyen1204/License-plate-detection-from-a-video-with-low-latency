@@ -17,7 +17,7 @@ From all the analyzed frame, if a plate is detected then it save it in a folder.
 
 ## How this repo detect the plate ? 
 1. Open the video with open CV
-2. Every 10 frames it analysed the frame as a picture by using plate_detection_from_picture.py
+2. Every 10 frames it analysed the frame as a picture by using plate_detection_from_picture.py (it can be changed of course in the main.py but during my test I found that a little bit more than 1 frame per second seemed to be a good compromise between performance and latency)
 3. plate_detection_from_picture.py then process couples operations on the picture : grayed, noise reduction, edge detection, find the plate, read the plate and assess the accuracy. And then return an annoted picture of the frame
 5. main.py then save all the plate detected on the video with the name of the plate, the accuracy and the time stamp on it 
 
@@ -28,3 +28,5 @@ The goal of this repo is to be used in real time application. In order to do so,
 Here is an exemple of a YOLO based plate detection : 
 
 ![Idée d'amélioration utiliser YOLO](https://github.com/user-attachments/assets/6003d4cb-4465-4783-802c-20b8f42784b3)
+
+An other good idea would to use preview detection in oder to confirm or not the plate number
